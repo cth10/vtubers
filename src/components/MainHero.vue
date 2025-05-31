@@ -38,6 +38,7 @@ export default {
   color: #fff;
   position: relative;
   padding-top: 80px; /* Ajuste para a navbar fixa */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .hero::before {
