@@ -119,6 +119,54 @@ export default {
     line-height: 1.8;
 }
 
+@media (max-width: 768px) {
+  .how-to-become-section {
+    padding: 60px 15px;
+  }
+
+  .how-to-become-section h2 {
+    font-size: 2.2rem; /* Responsive heading */
+    margin-bottom: 40px;
+  }
+
+  .steps-container {
+    gap: 20px; /* Reduce gap for smaller screens */
+  }
+
+  .step-card {
+    padding: 20px;
+  }
+
+  .step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .step-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .step-card p {
+    font-size: 0.9rem;
+  }
+  .extra-info {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps-container {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+  }
+   .step-icon {
+    font-size: 2.2rem;
+  }
+  .step-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
 /* Adicione Font Awesome se não estiver globalmente */
 /* @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'); */
 </style> 

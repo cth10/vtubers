@@ -85,4 +85,35 @@ export default {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 15px;
+  }
+
+  .about-section h2 {
+    font-size: 2.2rem; /* Responsive heading */
+  }
+
+  .about-content {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center text content on mobile */
+  }
+
+  .about-text,
+  .about-image {
+    max-width: 100%; /* Allow elements to take full width when stacked */
+    text-align: justify; /* Justify text for better readability on mobile */
+    margin-bottom: 20px; /* Add some space between stacked items */
+  }
+
+  .about-image {
+    order: -1; /* Optionally, move image above text on mobile */
+    margin-bottom: 30px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+}
 </style> 

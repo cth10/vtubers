@@ -142,4 +142,56 @@ export default {
   transform: scale(1.05);
   border-color: #ff4081;
 }
+
+@media (max-width: 768px) {
+  .popular-vtubers-section {
+    padding: 60px 15px;
+  }
+
+  .popular-vtubers-section h2 {
+    font-size: 2.2rem; /* Responsive heading */
+  }
+
+  .vtuber-grid {
+    gap: 20px; /* Reduce gap for smaller screens */
+  }
+
+  .vtuber-card {
+    padding: 15px;
+  }
+
+  .vtuber-card img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+
+  .vtuber-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .vtuber-card p {
+    font-size: 0.9rem;
+  }
+
+  .btn-secondary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vtuber-grid {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+    gap: 20px;
+  }
+
+  .vtuber-card img {
+    width: 100px;
+    height: 100px;
+  }
+  .vtuber-card h3 {
+    font-size: 1.2rem;
+  }
+}
 </style> 

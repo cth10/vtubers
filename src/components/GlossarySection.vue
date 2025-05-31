@@ -248,8 +248,7 @@ export default {
 .term-card h4 {
   font-family: 'Roboto', sans-serif; /* Fonte mais padrão para o termo */
   color: #f0f0f0;
-  font-size: 1.4rem;
-  margin-top: 0;
+  font-size: 1.3rem; /* Aumentado para melhor leitura */
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
@@ -258,15 +257,19 @@ export default {
 
 .term-card h4 .fas {
   font-size: 1rem;
-  color: #ff69b4;
   transition: transform 0.3s ease;
 }
 
+.term-card.expanded .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
 .term-definition {
-  color: #ccc;
-  font-size: 0.95rem;
+  color: #ccc; /* Cinza claro para definição */
+  font-size: 1rem;
   line-height: 1.7;
-  overflow: hidden; /* Para a animação funcionar bem */
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255,255,255,0.2);
   margin-top: 10px;
 }
 
@@ -277,57 +280,84 @@ export default {
 .term-definition ::v-deep(ul),
 .term-definition ::v-deep(ol) {
   padding-left: 20px;
+  margin-bottom: 0.5em;
 }
 
-/* Animação de slide e fade para a definição */
+/* Animação para expandir/colapsar */
 .slide-fade-enter-active {
-  transition: all 0.4s ease-out;
+  transition: all .3s ease-out;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   transform: translateY(-10px);
   opacity: 0;
-  max-height: 0;
-}
-
-.slide-fade-enter-to,
-.slide-fade-leave-from {
-  max-height: 500px; /* Ajuste conforme necessário, deve ser maior que o conteúdo */
-  opacity: 1;
 }
 
 .no-results {
   text-align: center;
   font-size: 1.2rem;
-  color: #ffc0cb; /* Rosa claro */
+  color: #ffc107; /* Amarelo para aviso */
   margin-top: 30px;
-  font-style: italic;
 }
 
-/* Estilo global da barra de rolagem (já existe em App.vue, mas pode ser reforçado aqui se necessário) */
-
-/* Responsividade */
 @media (max-width: 768px) {
+  .glossary-section {
+    padding: 40px 15px;
+    min-height: auto; /* Remove fixed min-height */
+  }
+
   .glossary-section h2 {
     font-size: 2.2rem;
+    letter-spacing: 2px;
   }
-  .glossary-category h3 {
-    font-size: 1.7rem;
-  }
-  .term-card h4 {
-    font-size: 1.2rem;
-  }
+
   .search-bar-container input {
     padding: 12px 15px 12px 40px;
     font-size: 1rem;
   }
+
   .search-icon {
     left: 15px;
+    font-size: 1rem;
+  }
+
+  .glossary-category h3 {
+    font-size: 1.6rem;
+  }
+
+  .terms-grid {
+    /* auto-fit with minmax(250px, 1fr) might be better than explicitly 1fr here */
+    /* grid-template-columns: 1fr;  Let auto-fit handle it unless issues */
+    gap: 15px;
+  }
+
+  .term-card {
+    padding: 15px;
+  }
+
+  .term-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .term-definition {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .glossary-section h2 {
+    font-size: 1.8rem;
+  }
+   .glossary-category h3 {
+    font-size: 1.4rem;
+  }
+  .terms-grid {
+    grid-template-columns: 1fr; /* Ensure single column for very small screens */
   }
 }
 

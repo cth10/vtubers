@@ -83,4 +83,33 @@ h1, h2, h3 {
 /* Adicionando importação do Google Fonts para Roboto - caso não esteja no index.html */
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */ /* Commented out as it's imported above */
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust base font size for smaller screens */
+  }
+
+  .container {
+    padding: 0 10px; /* Reduce padding on smaller screens */
+  }
+
+  h1 {
+    font-size: 2em; /* Adjust h1 size */
+  }
+
+  h2 {
+    font-size: 1.5em; /* Adjust h2 size */
+  }
+
+  h3 {
+    font-size: 1.2em; /* Adjust h3 size */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px; /* Further adjust base font size for very small screens */
+  }
+  /* Add more specific mobile styles here if needed */
+}
 </style>

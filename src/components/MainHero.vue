@@ -89,4 +89,39 @@ export default {
   background-color: #e0004d;
   transform: translateY(-2px);
 }
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto; /* Adjust height for mobile */
+    min-height: 70vh;
+    padding-top: 70px; /* Slightly reduce padding if navbar is smaller or for more space */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem; /* Further reduce h1 size for mobile */
+  }
+
+  .hero p {
+    font-size: 1.2rem; /* Further reduce p size for mobile */
+  }
+
+  .btn-primary {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem; /* Even smaller for very small screens */
+  }
+
+  .hero p {
+    font-size: 1rem; /* Even smaller for very small screens */
+  }
+  .hero {
+    min-height: 60vh;
+    background-position: 70% center; /* Align image slightly to the right on mobile */
+  }
+}
 </style> 

@@ -45,6 +45,21 @@ export default {
   color: #ff4081;
 }
 
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 30px 15px;
+  }
+
+  .site-footer p {
+    font-size: 0.9rem;
+  }
+
+  .social-links a {
+    font-size: 1.3rem;
+    margin: 0 8px;
+  }
+}
+
 /* Adicione Font Awesome se não estiver globalmente */
 /* @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'); */
 </style> 
