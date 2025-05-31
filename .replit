@@ -1,0 +1,13 @@
+modules = ["vue-node-20", "web", "nodejs-20"]
+run = "npm run serve"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "npm run serve"]
+
+[[ports]]
+localPort = 8082
+externalPort = 80
+exposeLocalhost = true
