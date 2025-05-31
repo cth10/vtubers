@@ -20,19 +20,19 @@
       <!-- Menu principal -->
       <nav class="main-nav" :class="{ 'active': menuActive }">
         <a href="#about" @click="closeMenu" class="nav-link">
-          <span class="link-text">About</span>
+          <span class="link-text">Sobre</span>
           <span class="link-sub">概要</span>
         </a>
         <a href="#popular" @click="closeMenu" class="nav-link">
-          <span class="link-text">Popular</span>
+          <span class="link-text">Populares</span>
           <span class="link-sub">人気</span>
         </a>
         <a href="#howtobecome" @click="closeMenu" class="nav-link">
-          <span class="link-text">Guide</span>
+          <span class="link-text">Guia</span>
           <span class="link-sub">ガイド</span>
         </a>
         <a href="#glossary" @click="closeMenu" class="nav-link">
-          <span class="link-text">Glossary</span>
+          <span class="link-text">Glossário</span>
           <span class="link-sub">用語集</span>
         </a>
       </nav>
