@@ -10,4 +10,3 @@ run = ["sh", "-c", "npm run serve"]
 [[ports]]
 localPort = 8082
 externalPort = 80
-exposeLocalhost = true

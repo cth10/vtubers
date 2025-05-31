@@ -5,7 +5,8 @@ module.exports = defineConfig({
     ? '/' // Alterado para a raiz do domínio personalizado
     : '/',
   devServer: {
-    host: 'localhost',
-    port: 8082
+    host: '0.0.0.0',
+    port: 8082,
+    allowedHosts: 'all'
   }
 })
