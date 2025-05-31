@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # Ou 'main' se for o seu branch principal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Especifique a versão do Node.js que seu projeto usa
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          # Se o seu repositório no GitHub for algo como https://cth10.github.io/vtubers/
+          # e você quiser que o site seja acessível em https://cth10.github.io/vtubers/
+          # você pode precisar ajustar o base path na configuração do seu projeto Vue (vue.config.js)
+          # e talvez aqui com `publish_branch` ou `cname` se necessário.
+          # Por padrão, ele publicará na raiz do branch gh-pages.
+          # Se o nome do repositório for o nome de usuário.github.io (ex: cth10.github.io),
+          # então o deploy para a raiz do gh-pages funcionará diretamente.
+          # Se o nome do repositório for diferente (como é o seu caso: 'vtubers'),
+          # o site ficará em cth10.github.io/vtubers/
+          # O vue.config.js precisa ter publicPath: '/vtubers/' 
