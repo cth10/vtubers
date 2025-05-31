@@ -1,13 +1,22 @@
 const { defineConfig } = require('@vue/cli-service')
+const webpack = require('webpack')
+
 module.exports = defineConfig({
   transpileDependencies: true,
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/' // Alterado para a raiz do domínio personalizado
+    ? '/'
     : '/',
   devServer: {
     host: '0.0.0.0',
-    port: 8082,
+    port: 5000,
     allowedHosts: 'all',
-    https: true
+    https: false
+  },
+  configureWebpack: {
+    plugins: [
+      new webpack.DefinePlugin({
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false'
+      })
+    ]
   }
 })

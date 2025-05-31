@@ -8,16 +8,8 @@ channel = "stable-24_05"
 run = ["sh", "-c", "npm run serve"]
 
 [[ports]]
-localPort = 8082
+localPort = 5000
 externalPort = 80
-
-[[ports]]
-localPort = 8083
-externalPort = 3000
-
-[[ports]]
-localPort = 8084
-externalPort = 3001
 
 [workflows]
 runButton = "Run VTuber Site"
