@@ -2,6 +2,7 @@
   <SiteNavbar />
   <MainHero />
   <AboutSection />
+  <VirtualRealitySection />
   <PopularVtubersSection />
   <HowToBecomeSection />
   <GlossarySection />
@@ -12,6 +13,7 @@
 import SiteNavbar from './components/SiteNavbar.vue'
 import MainHero from './components/MainHero.vue'
 import AboutSection from './components/AboutSection.vue'
+import VirtualRealitySection from './components/VirtualRealitySection.vue'
 import PopularVtubersSection from './components/PopularVtubersSection.vue'
 import HowToBecomeSection from './components/HowToBecomeSection.vue'
 import GlossarySection from './components/GlossarySection.vue'
@@ -23,6 +25,7 @@ export default {
     SiteNavbar,
     MainHero,
     AboutSection,
+    VirtualRealitySection,
     PopularVtubersSection,
     HowToBecomeSection,
     GlossarySection,
