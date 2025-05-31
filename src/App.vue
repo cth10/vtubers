@@ -45,6 +45,7 @@ body {
   background-color: #1a1a2e; /* Dark background for the entire site */
   color: #e0e0e0; /* Light text color for readability on dark background */
   line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
@@ -56,6 +57,7 @@ body {
 /* Estilos para rolagem suave */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Estilizando a barra de rolagem para um visual mais moderno (apenas WebKit/Blink) */
