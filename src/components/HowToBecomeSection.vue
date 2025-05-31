@@ -37,7 +37,7 @@
             </ul>
           </div>
           <div class="card-footer">
-            <span class="cost-estimate">¥50,000 - ¥150,000</span>
+            <span class="cost-estimate">R$ 1.800 - R$ 5.400</span>
           </div>
         </div>
 
@@ -66,7 +66,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <span class="cost-estimate">¥30,000 - ¥500,000</span>
+            <span class="cost-estimate">R$ 1.080 - R$ 18.000</span>
           </div>
         </div>
 
@@ -96,7 +96,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <span class="cost-estimate">Free - ¥20,000</span>
+            <span class="cost-estimate">Grátis - R$ 720</span>
           </div>
         </div>
 
