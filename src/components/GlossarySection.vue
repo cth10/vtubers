@@ -1,3 +1,4 @@
+
 <template>
   <section id="glossary" class="glossary-section">
     <div class="container">
@@ -32,86 +33,326 @@
 </template>
 
 <script>
-import { marked } from 'marked';
-
 export default {
   name: 'GlossarySection',
   data() {
     return {
-      rawMarkdown: '',
-      glossaryData: [],
+      glossaryData: [
+        {
+          title: "Termos Gerais",
+          terms: [
+            {
+              term: "VTuber (Virtual YouTuber)",
+              definition: "Criador de conteúdo online ou streamer que utiliza um avatar digital para se representar. O termo foi originalmente cunhado por Kizuna Ai, mas agora se aplica a criadores em diversas plataformas, não apenas no YouTube.",
+              expanded: false
+            },
+            {
+              term: "Avatar",
+              definition: "A representação digital de um VTuber.",
+              expanded: false
+            },
+            {
+              term: "Live2D",
+              definition: "Software e técnica de animação usados para criar modelos 2D dinâmicos com expressões e movimentos. A maioria dos VTubers utiliza modelos Live2D.",
+              expanded: false
+            },
+            {
+              term: "Modelo 3D",
+              definition: "Avatares criados com software de modelagem 3D, permitindo movimentos e expressões complexas.",
+              expanded: false
+            },
+            {
+              term: "Rigging",
+              definition: "O processo de criar um \"esqueleto\" digital para um modelo 2D ou 3D, permitindo que ele seja animado em tempo real. A pessoa que faz isso é chamada de \"rigger\".",
+              expanded: false
+            },
+            {
+              term: "Debut",
+              definition: "A transmissão de lançamento oficial de um VTuber. Geralmente inclui a apresentação do avatar, personalidade, objetivos e redes sociais.",
+              expanded: false
+            },
+            {
+              term: "Redebut",
+              definition: "Uma nova transmissão de debut, geralmente para apresentar um novo design de avatar, mudança de nome, ou algo similar.",
+              expanded: false
+            },
+            {
+              term: "Graduação",
+              definition: "Aposentadoria de um VTuber. Alguns celebram com transmissões elaboradas, enquanto outros podem se aposentar sem aviso.",
+              expanded: false
+            },
+            {
+              term: "Lore",
+              definition: "Elementos fictícios do cenário ou história de um VTuber.",
+              expanded: false
+            },
+            {
+              term: "Mama/Papa",
+              definition: "Termos usados para se referir ao designer, ilustrador ou rigger do modelo de um VTuber. \"Mama\" é frequentemente usado para a ilustradora e \"Papa\" para o rigger, mas pode variar.",
+              expanded: false
+            },
+            {
+              term: "Oshi",
+              definition: "O VTuber favorito de um espectador. Termo originado da indústria de idols.",
+              expanded: false
+            },
+            {
+              term: "Oshi Mark",
+              definition: "Um emoji ou conjunto de emojis escolhidos oficialmente para representar um VTuber, frequentemente usado por fãs em seus nomes de usuário nas redes sociais.",
+              expanded: false
+            },
+            {
+              term: "Fan Name",
+              definition: "Um apelido de grupo para os espectadores de um determinado VTuber.",
+              expanded: false
+            },
+            {
+              term: "Collab (Colaboração)",
+              definition: "Uma transmissão ou conteúdo onde múltiplos VTubers aparecem juntos.",
+              expanded: false
+            },
+            {
+              term: "Off-Collab",
+              definition: "Uma colaboração onde os VTubers se encontram pessoalmente, em vez de online.",
+              expanded: false
+            },
+            {
+              term: "Zatsudan",
+              definition: "Uma transmissão de \"Just Chatting\" (Apenas Conversando), onde o VTuber fala sobre tópicos diversos, muitas vezes interagindo com o chat.",
+              expanded: false
+            },
+            {
+              term: "Utawaku",
+              definition: "Uma transmissão de karaokê ou canto ao vivo.",
+              expanded: false
+            },
+            {
+              term: "Superchat (Supa/SupaCha)",
+              definition: "Um tipo de doação no YouTube Live que destaca a mensagem do doador. \"Akasupa\" refere-se ao Superchat vermelho, o de maior valor.",
+              expanded: false
+            },
+            {
+              term: "Anti",
+              definition: "Um troll ou hater.",
+              expanded: false
+            },
+            {
+              term: "Doxxing",
+              definition: "O ato de revelar publicamente informações pessoais sobre um VTuber, como seu nome real ou endereço. É uma prática mal vista na comunidade.",
+              expanded: false
+            },
+            {
+              term: "Past Life",
+              definition: "A identidade que um VTuber tinha antes de se tornar VTuber. Revelar isso é geralmente um grande tabu.",
+              expanded: false
+            },
+            {
+              term: "PNGTuber",
+              definition: "Um VTuber que se representa com uma imagem estática (formato PNG), como uma alternativa mais barata ou temporária a um modelo animado.",
+              expanded: false
+            },
+            {
+              term: "Seiso",
+              definition: "Termo que significa \"puro\" ou \"sadio\". Usado para descrever VTubers que não usam palavrões ou falam sobre tópicos considerados rudes. Frequentemente usado ironicamente.",
+              expanded: false
+            },
+            {
+              term: "Teetee",
+              definition: "Gíria que vem de \"toutoi\" (尊い), significando \"precioso\" ou \"adorável\". Usado para descrever momentos ou interações fofas entre VTubers.",
+              expanded: false
+            },
+            {
+              term: "Kusa (草)",
+              definition: "Gíria japonesa da internet equivalente a \"lol\" ou \"lmao\". \"W\" (de \"wara\", rir) repetido (wwww) parece grama (kusa).",
+              expanded: false
+            },
+            {
+              term: "Yabai (やばい)",
+              definition: "Palavra japonesa com múltiplos significados dependendo do contexto. No fandom de VTubers, é frequentemente usada para descrever algo \"perigoso\", \"arriscado\", ou sugestivo/picante.",
+              expanded: false
+            },
+            {
+              term: "VOD (Video On Demand)",
+              definition: "Uma gravação arquivada de uma transmissão ao vivo.",
+              expanded: false
+            },
+            {
+              term: "Unarchived",
+              definition: "Uma transmissão ao vivo para a qual não haverá VOD disponível, geralmente por razões de direitos autorais.",
+              expanded: false
+            },
+            {
+              term: "Guerilla Stream",
+              definition: "Uma transmissão não planejada que acontece de surpresa.",
+              expanded: false
+            },
+            {
+              term: "Subathon",
+              definition: "Uma maratona de streams cujo objetivo é conseguir mais inscrições (subscriptions) na Twitch. A duração do evento geralmente aumenta a cada nova inscrição.",
+              expanded: false
+            },
+            {
+              term: "Talent",
+              definition: "O indivíduo por trás do VTuber, em oposição ao personagem. A identidade do \"talent\" é frequentemente um segredo bem guardado.",
+              expanded: false
+            },
+            {
+              term: "Babiniku",
+              definition: "Um VTuber que é homem na vida real, mas usa um modelo feminino.",
+              expanded: false
+            },
+            {
+              term: "Mute VTuber",
+              definition: "Um VTuber que não fala em seu conteúdo, por diversos motivos.",
+              expanded: false
+            },
+            {
+              term: "Indie VTuber",
+              definition: "Um VTuber independente, não afiliado a uma agência.",
+              expanded: false
+            },
+            {
+              term: "Corpo VTuber",
+              definition: "Um VTuber afiliado a uma corporação ou agência.",
+              expanded: false
+            },
+            {
+              term: "Hololive",
+              definition: "Uma grande agência de talentos VTuber japonesa.",
+              expanded: false
+            },
+            {
+              term: "Nijisanji",
+              definition: "Outra grande agência de talentos VTuber, também de origem japonesa.",
+              expanded: false
+            },
+            {
+              term: "VShojo",
+              definition: "Uma agência de talentos VTuber baseada nos Estados Unidos.",
+              expanded: false
+            },
+            {
+              term: "EN VTuber",
+              definition: "VTuber que fala inglês (English-speaking).",
+              expanded: false
+            },
+            {
+              term: "JP VTuber",
+              definition: "VTuber que fala japonês (Japanese-speaking).",
+              expanded: false
+            },
+            {
+              term: "ID VTuber",
+              definition: "VTuber que fala indonésio (Indonesian-speaking).",
+              expanded: false
+            },
+            {
+              term: "KR VTuber",
+              definition: "VTuber que fala coreano (Korean-speaking).",
+              expanded: false
+            },
+            {
+              term: "VUP",
+              definition: "Termo chinês para VTuber, popular na plataforma Bilibili (Virtual UP).",
+              expanded: false
+            },
+            {
+              term: "Otsu (おつ)",
+              definition: "Abreviação de \"otsukaresama deshita\" (お疲れ様でした), que significa algo como \"obrigado pelo seu trabalho\" ou \"bom trabalho\". Usado como despedida no final de uma stream. Muitos VTubers têm suas próprias variações (ex: \"Otsupeko\" para Usada Pekora).",
+              expanded: false
+            }
+          ]
+        },
+        {
+          title: "Gírias e Memes",
+          terms: [
+            {
+              term: "8888 (Hachi Hachi Hachi Hachi)",
+              definition: "O número 8 em japonês é \"hachi\", que soa similar a \"pachi pachi\", a onomatopeia para palmas. Usado no chat para aplaudir.",
+              expanded: false
+            },
+            {
+              term: "Boing Boing",
+              definition: "Refere-se a personagens com seios grandes e com física de movimento proeminente. O oposto de \"Pettanko\".",
+              expanded: false
+            },
+            {
+              term: "Pettanko (ぺったんこ)",
+              definition: "Termo para personagens com peito plano.",
+              expanded: false
+            },
+            {
+              term: "Bottom Left",
+              definition: "Gíria originada de um gráfico de alinhamento de pureza vs. inteligência entre membros da Hololive English. \"Bottom left\" representa alguém que é impuro e não muito inteligente, ou apenas impuro.",
+              expanded: false
+            },
+            {
+              term: "DD (Daredemo Daisuki - 誰でも大好き)",
+              definition: "\"Eu amo qualquer um\". Usado para fãs que gostam e acompanham muitos VTubers, em vez de apenas um oshi.",
+              expanded: false
+            },
+            {
+              term: "Gachikoi (ガチ恋)",
+              definition: "Fãs que estão romanticamente apaixonados por um VTuber.",
+              expanded: false
+            },
+            {
+              term: "Halu",
+              definition: "Curto para \"halusinasi\" (alucinação em indonésio). Usado para descrever alguém que está sendo delirante, como acreditar que é casado com um talent.",
+              expanded: false
+            },
+            {
+              term: "Ikebo (イケボ)",
+              definition: "Abreviação de \"ikemen voice\" (イケメンボイス), voz de homem bonito. Usado quando uma VTuber feminina faz uma voz masculina atraente.",
+              expanded: false
+            },
+            {
+              term: "Inaff",
+              definition: "Contração de \"Ina\" (Ninomae Ina'nis da Hololive EN) e \"enough\" (suficiente). Usado quando alguém faz um trocadilho ruim, uma característica da Ina.",
+              expanded: false
+            },
+            {
+              term: "Kaigai Niki (海外ニキ)",
+              definition: "\"Irmãos do exterior\". Termo usado por VTubers e fãs japoneses para se referir a fãs de fora do Japão.",
+              expanded: false
+            },
+            {
+              term: "PON (Ponkotsu - ポンコツ)",
+              definition: "Significa \"desajeitado\", \"inútil\" ou \"não confiável\". Usado para descrever VTubers que cometem erros bobos, o que muitas vezes aumenta seu charme.",
+              expanded: false
+            },
+            {
+              term: "TSKR",
+              definition: "Abreviação de \"tasukaru\" (助かる), que significa \"ser salvo\". Usado no chat quando um VTuber faz algo muito fofo ou prestativo, como se dissesse \"isso me salvou\" ou \"eu precisava disso\".",
+              expanded: false
+            },
+            {
+              term: "YAGOO",
+              definition: "Apelido de Motoaki Tanigo, o CEO da Cover Corp (empresa da Hololive). Originou-se de um erro de digitação de Oozora Subaru.",
+              expanded: false
+            }
+          ]
+        }
+      ],
       filteredGlossaryData: [],
       searchTerm: '',
-      loading: true,
+      loading: false,
       error: null,
     };
   },
-  async created() {
-    await this.loadGlossary();
+  created() {
+    this.initializeGlossary();
   },
   methods: {
-    async loadGlossary() {
-      this.loading = true;
-      this.error = null;
-      try {
-        // Ajuste o caminho para o arquivo Markdown conforme necessário
-        // Presumindo que glossario_vtuber.md está na raiz do projeto Vue (pasta public ou acessível via fetch)
-        // Se estiver em /public, o caminho seria /glossario_vtuber.md
-        // Se estiver na raiz do workspace (fora de vtuber-site), precisará de um ajuste no build ou copiar para public
-        const response = await fetch('/glossario_vtuber.md'); 
-        if (!response.ok) {
-          throw new Error(`Erro ao carregar o glossário: ${response.statusText} (status: ${response.status})`);
-        }
-        this.rawMarkdown = await response.text();
-        this.parseMarkdown();
-        this.filterGlossary(); // Aplicar filtro inicial (mostrar tudo)
-      } catch (e) {
-        console.error("Falha ao carregar ou processar o glossário:", e);
-        this.error = "Não foi possível carregar o glossário. Verifique o console para mais detalhes.";
-        this.glossaryData = [];
-        this.filteredGlossaryData = [];
-      }
-      this.loading = false;
-    },
-    parseMarkdown() {
-      const sections = this.rawMarkdown.split(/\n## /).slice(1); // Dividir por títulos de seção ##
-      this.glossaryData = sections.map(sectionText => {
-        const lines = sectionText.split('\n');
-        const title = lines[0].trim();
-        const terms = [];
-        let currentTerm = null;
-
-        for (let i = 1; i < lines.length; i++) {
-          const line = lines[i].trim();
-          if (line.startsWith('*   **')) { // Início de um novo termo
-            if (currentTerm) terms.push(currentTerm); // Salva o termo anterior
-            const termMatch = line.match(/\*\s*\*\*(.*?)\*\*:(.*)/);
-            if (termMatch) {
-              currentTerm = {
-                term: termMatch[1].trim(),
-                definition: marked.parse(termMatch[2].trim()), // Processa apenas a definição inicial
-                rawDefinition: termMatch[2].trim(),
-                expanded: false,
-              };
-            }
-          } else if (currentTerm && line && !line.startsWith('##')) {
-            // Linhas de continuação da definição
-            currentTerm.rawDefinition += `\n${line}`;
-            currentTerm.definition = marked.parse(currentTerm.rawDefinition);
-          }
-        }
-        if (currentTerm) terms.push(currentTerm); // Salva o último termo da seção
-        
-        return { title, terms };
-      });
+    initializeGlossary() {
+      this.filteredGlossaryData = JSON.parse(JSON.stringify(this.glossaryData));
     },
     toggleTerm(item) {
       item.expanded = !item.expanded;
     },
     filterGlossary() {
       if (!this.searchTerm) {
-        this.filteredGlossaryData = JSON.parse(JSON.stringify(this.glossaryData)); // Cópia profunda para resetar
-        // Resetar o estado de "expanded" ao limpar a busca
+        this.filteredGlossaryData = JSON.parse(JSON.stringify(this.glossaryData));
         this.filteredGlossaryData.forEach(section => {
             section.terms.forEach(term => term.expanded = false);
         });
@@ -122,11 +363,9 @@ export default {
       this.glossaryData.forEach(section => {
         const matchingTerms = section.terms.filter(item => 
           item.term.toLowerCase().includes(lowerSearchTerm) || 
-          item.rawDefinition.toLowerCase().includes(lowerSearchTerm)
+          item.definition.toLowerCase().includes(lowerSearchTerm)
         );
         if (matchingTerms.length > 0) {
-          // Ao filtrar, manter o estado de expansão ou colapsar tudo?
-          // Por agora, vamos colapsar para um novo resultado de busca.
           const newMatchingTerms = JSON.parse(JSON.stringify(matchingTerms));
           newMatchingTerms.forEach(term => term.expanded = false); 
           filtered.push({ title: section.title, terms: newMatchingTerms });
@@ -134,10 +373,6 @@ export default {
       });
       this.filteredGlossaryData = filtered;
     }
-  },
-  watch: {
-    // Observar searchTerm para filtrar dinamicamente
-    // searchTerm: 'filterGlossary' // Isso é redundante se @input chama filterGlossary
   }
 }
 </script>
@@ -361,4 +596,4 @@ export default {
   }
 }
 
-</style> 
+</style>
