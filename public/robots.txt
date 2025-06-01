@@ -6,7 +6,6 @@ Allow: /
 Sitemap: https://vtubers.com.br/sitemap.xml
 
 # Páginas importantes
-Allow: /glossario.html
 Allow: /assets/
 
 # Evitar crawling de arquivos desnecessários

@@ -28,11 +28,7 @@
           Nenhum termo encontrado para "{{ searchTerm }}".
         </div>
         
-        <div class="full-glossary-link">
-          <a href="/glossario.html" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i> Ver Glossário Completo
-          </a>
-        </div>
+        
       </div>
     </div>
   </section>
