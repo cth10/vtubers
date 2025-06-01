@@ -1,9 +1,8 @@
-
 <template>
   <section id="glossary" class="glossary-section">
     <div class="container">
       <h2><i class="fas fa-book-open"></i> Glossário VTuber <i class="fas fa-book-open"></i></h2>
-      
+
       <div class="search-bar-container">
         <input type="text" v-model="searchTerm" placeholder="Buscar termo..." @input="filterGlossary" />
         <i class="fas fa-search search-icon"></i>
@@ -11,7 +10,7 @@
 
       <div v-if="loading">Carregando glossário...</div>
       <div v-if="error">{{ error }}</div>
-      
+
       <div v-if="!loading && !error" class="glossary-content">
         <div v-for="(section, sectionIndex) in filteredGlossaryData" :key="sectionIndex" class="glossary-category">
           <h3>{{ section.title }}</h3>
@@ -345,6 +344,41 @@ export default {
   },
   methods: {
     initializeGlossary() {
+      try {
+        // Como o glossário agora é um arquivo HTML estático, vamos usar dados hardcoded
+        // ou redirecionar diretamente para a página do glossário
+        this.glossaryItems = [
+          {
+            term: 'VTuber (Virtual YouTuber)',
+            definition: 'Criador de conteúdo online ou streamer que utiliza um avatar digital para se representar.'
+          },
+          {
+            term: 'Avatar',
+            definition: 'A representação digital de um VTuber.'
+          },
+          {
+            term: 'Live2D',
+            definition: 'Software e técnica de animação usados para criar modelos 2D dinâmicos com expressões e movimentos.'
+          },
+          {
+            term: 'Debut',
+            definition: 'A transmissão de lançamento oficial de um VTuber.'
+          },
+          {
+            term: 'Oshi',
+            definition: 'O VTuber favorito de um espectador. Termo originado da indústria de idols.'
+          }
+        ];
+      } catch (error) {
+        console.error('Falha ao carregar ou processar o glossário:', error);
+        // Fallback content em caso de erro
+        this.glossaryItems = [
+          {
+            term: 'VTuber',
+            definition: 'Virtual YouTuber - criador de conteúdo que usa avatar virtual'
+          }
+        ];
+      }
       this.filteredGlossaryData = JSON.parse(JSON.stringify(this.glossaryData));
     },
     toggleTerm(item) {
