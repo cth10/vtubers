@@ -1,22 +1,20 @@
-const { defineConfig } = require('@vue/cli-service')
-const webpack = require('webpack')
+const { defineConfig } = require("@vue/cli-service");
+const webpack = require("webpack");
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/'
-    : '/',
+  publicPath: process.env.NODE_ENV === "production" ? "/" : "/",
   devServer: {
-    host: '0.0.0.0',
+    host: "0.0.0.0",
     port: 5000,
-    allowedHosts: 'all',
-    https: false
+    allowedHosts: "all",
+    https: true,
   },
   configureWebpack: {
     plugins: [
       new webpack.DefinePlugin({
-        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false'
-      })
-    ]
-  }
-})
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "false",
+      }),
+    ],
+  },
+});

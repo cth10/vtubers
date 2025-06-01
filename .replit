@@ -11,6 +11,14 @@ run = ["sh", "-c", "npm run serve"]
 localPort = 5000
 externalPort = 80
 
+[[ports]]
+localPort = 5001
+externalPort = 3001
+
+[[ports]]
+localPort = 8082
+externalPort = 3000
+
 [workflows]
 runButton = "Run VTuber Site"
 
