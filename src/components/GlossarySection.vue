@@ -344,41 +344,7 @@ export default {
   },
   methods: {
     initializeGlossary() {
-      try {
-        // Como o glossário agora é um arquivo HTML estático, vamos usar dados hardcoded
-        // ou redirecionar diretamente para a página do glossário
-        this.glossaryItems = [
-          {
-            term: 'VTuber (Virtual YouTuber)',
-            definition: 'Criador de conteúdo online ou streamer que utiliza um avatar digital para se representar.'
-          },
-          {
-            term: 'Avatar',
-            definition: 'A representação digital de um VTuber.'
-          },
-          {
-            term: 'Live2D',
-            definition: 'Software e técnica de animação usados para criar modelos 2D dinâmicos com expressões e movimentos.'
-          },
-          {
-            term: 'Debut',
-            definition: 'A transmissão de lançamento oficial de um VTuber.'
-          },
-          {
-            term: 'Oshi',
-            definition: 'O VTuber favorito de um espectador. Termo originado da indústria de idols.'
-          }
-        ];
-      } catch (error) {
-        console.error('Falha ao carregar ou processar o glossário:', error);
-        // Fallback content em caso de erro
-        this.glossaryItems = [
-          {
-            term: 'VTuber',
-            definition: 'Virtual YouTuber - criador de conteúdo que usa avatar virtual'
-          }
-        ];
-      }
+      // Simplesmente inicializar os dados filtrados com os dados estáticos
       this.filteredGlossaryData = JSON.parse(JSON.stringify(this.glossaryData));
     },
     toggleTerm(item) {
