@@ -1,3 +1,4 @@
+
 <template>
   <section id="glossary" class="glossary-section">
     <div class="container">
@@ -25,6 +26,12 @@
         </div>
          <div v-if="filteredGlossaryData.length === 0 && searchTerm" class="no-results">
           Nenhum termo encontrado para "{{ searchTerm }}".
+        </div>
+        
+        <div class="full-glossary-link">
+          <a href="/glossario.html" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i> Ver Glossário Completo
+          </a>
         </div>
       </div>
     </div>
@@ -344,7 +351,6 @@ export default {
   },
   methods: {
     initializeGlossary() {
-      // Simplesmente inicializar os dados filtrados com os dados estáticos
       this.filteredGlossaryData = JSON.parse(JSON.stringify(this.glossaryData));
     },
     toggleTerm(item) {
@@ -392,17 +398,17 @@ export default {
 .glossary-section h2 {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 3rem; /* Aumentado */
-  color: #ff69b4; /* Rosa neon */
+  font-size: 3rem;
+  color: #ff69b4;
   text-transform: uppercase;
-  letter-spacing: 3px; /* Aumentado */
+  letter-spacing: 3px;
   font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff007f; /* Efeito neon */
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff007f;
 }
 
 .glossary-section h2 .fas {
   margin: 0 15px;
-  color: #f0f0f0; /* Ícones brancos para contraste */
+  color: #f0f0f0;
   text-shadow: 0 0 8px #f0f0f0;
 }
 
@@ -414,8 +420,8 @@ export default {
 
 .search-bar-container input {
   width: 100%;
-  padding: 15px 20px 15px 50px; /* Espaço para o ícone */
-  border-radius: 50px; /* Bordas arredondadas */
+  padding: 15px 20px 15px 50px;
+  border-radius: 50px;
   border: 2px solid #ff69b4;
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
@@ -450,7 +456,7 @@ export default {
 
 .glossary-category h3 {
   font-family: 'Orbitron', sans-serif;
-  color: #87cefa; /* Azul claro para títulos de categoria */
+  color: #87cefa;
   font-size: 2rem;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -466,13 +472,13 @@ export default {
 }
 
 .term-card {
-  background-color: rgba(42, 50, 78, 0.7); /* Fundo translúcido */
-  border: 1px solid #5a67d8; /* Borda roxa azulada */
+  background-color: rgba(42, 50, 78, 0.7);
+  border: 1px solid #5a67d8;
   border-radius: 10px;
   padding: 20px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+  backdrop-filter: blur(5px);
 }
 
 .term-card:hover {
@@ -481,9 +487,9 @@ export default {
 }
 
 .term-card h4 {
-  font-family: 'Roboto', sans-serif; /* Fonte mais padrão para o termo */
+  font-family: 'Roboto', sans-serif;
   color: #f0f0f0;
-  font-size: 1.3rem; /* Aumentado para melhor leitura */
+  font-size: 1.3rem;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
@@ -500,7 +506,7 @@ export default {
 }
 
 .term-definition {
-  color: #ccc; /* Cinza claro para definição */
+  color: #ccc;
   font-size: 1rem;
   line-height: 1.7;
   padding-top: 10px;
@@ -516,6 +522,34 @@ export default {
 .term-definition ::v-deep(ol) {
   padding-left: 20px;
   margin-bottom: 0.5em;
+}
+
+.full-glossary-link {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+.full-glossary-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff69b4;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px 25px;
+  border: 2px solid #ff69b4;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 105, 180, 0.1);
+}
+
+.full-glossary-link a:hover {
+  background-color: rgba(255, 105, 180, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
 }
 
 /* Animação para expandir/colapsar */
@@ -536,14 +570,14 @@ export default {
 .no-results {
   text-align: center;
   font-size: 1.2rem;
-  color: #ffc107; /* Amarelo para aviso */
+  color: #ffc107;
   margin-top: 30px;
 }
 
 @media (max-width: 768px) {
   .glossary-section {
     padding: 40px 15px;
-    min-height: auto; /* Remove fixed min-height */
+    min-height: auto;
   }
 
   .glossary-section h2 {
@@ -566,8 +600,6 @@ export default {
   }
 
   .terms-grid {
-    /* auto-fit with minmax(250px, 1fr) might be better than explicitly 1fr here */
-    /* grid-template-columns: 1fr;  Let auto-fit handle it unless issues */
     gap: 15px;
   }
 
@@ -592,8 +624,7 @@ export default {
     font-size: 1.4rem;
   }
   .terms-grid {
-    grid-template-columns: 1fr; /* Ensure single column for very small screens */
+    grid-template-columns: 1fr;
   }
 }
-
 </style>
