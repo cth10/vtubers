@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://vtuber-world.replit.app/sitemap.xml
+Sitemap: https://vtubers.com.br/sitemap.xml
 
 # Páginas importantes
 Allow: /glossario.html
