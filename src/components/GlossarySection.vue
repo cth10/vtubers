@@ -581,14 +581,24 @@ export default {
     letter-spacing: 2px;
   }
 
+  .search-bar-container {
+    max-width: 100%;
+    margin: 0 auto 30px auto;
+    padding: 0 10px;
+  }
+
   .search-bar-container input {
-    padding: 12px 15px 12px 40px;
+    padding: 14px 20px 14px 45px;
     font-size: 1rem;
+    border-radius: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 48px;
   }
 
   .search-icon {
-    left: 15px;
-    font-size: 1rem;
+    left: 18px;
+    font-size: 1.1rem;
   }
 
   .glossary-category h3 {
@@ -613,14 +623,44 @@ export default {
 }
 
 @media (max-width: 480px) {
+  .glossary-section {
+    padding: 30px 10px;
+  }
+
   .glossary-section h2 {
     font-size: 1.8rem;
+    margin-bottom: 30px;
   }
-   .glossary-category h3 {
+
+  .search-bar-container {
+    padding: 0 5px;
+    margin-bottom: 25px;
+  }
+
+  .search-bar-container input {
+    padding: 12px 18px 12px 42px;
+    font-size: 0.95rem;
+    border-radius: 25px;
+    min-height: 44px;
+  }
+
+  .search-icon {
+    left: 16px;
+    font-size: 1rem;
+  }
+
+  .glossary-category h3 {
     font-size: 1.4rem;
+    margin-top: 30px;
   }
+
   .terms-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .term-card {
+    padding: 12px;
   }
 }
 </style>
