@@ -31,7 +31,7 @@
           <span class="link-text">Guia</span>
           <span class="link-sub">ガイド</span>
         </a>
-        <a href="#glossary" @click="closeMenu" class="nav-link">
+        <a href="https://vtubers.com.br/glossario.html" @click="closeMenu" class="nav-link">
           <span class="link-text">Glossário</span>
           <span class="link-sub">用語集</span>
         </a>
