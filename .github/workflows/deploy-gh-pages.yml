@@ -1,10 +1,9 @@
-
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master
+      - main  # ALTERADO: de 'master' para 'main'
 
 jobs:
   deploy:
@@ -31,3 +30,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          force_orphan: true # ADICIONADO: Limpa o histórico a cada deploy
