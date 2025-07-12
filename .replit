@@ -1,0 +1,33 @@
+modules = ["vue-node-20", "web", "nodejs-20"]
+run = "npm run serve"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "npm run serve"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 5001
+externalPort = 3001
+
+[[ports]]
+localPort = 8082
+externalPort = 3000
+exposeLocalhost = true
+
+[workflows]
+runButton = "Run VTuber Site"
+
+[[workflows.workflow]]
+name = "Run VTuber Site"
+author = 43122532
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run serve"
