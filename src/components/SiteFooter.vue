@@ -1,7 +1,7 @@
 <template>
   <footer class="site-footer">
     <div class="container">
-      <p>Criado com <i class="fas fa-heart" style="color: #ff4081;"></i> por um entusiasta de VTubers.</p>
+      <p>Criado por <a href="https://cth.jp/" target="_blank" rel="noopener noreferrer">https://cth.jp/</a></p>
       <div class="social-links">
         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
